@@ -18,3 +18,10 @@ export function relativeDate(from: Date) {
     addSuffix: true,
   });
 }
+
+export function toSlug(str: string) {
+  return str
+    .toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/[^\w-]+/g, "");
+}
