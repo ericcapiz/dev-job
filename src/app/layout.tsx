@@ -4,8 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-import { ClerkProvider } from "@clerk/nextjs";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,13 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ClerkProvider>
-        <body className={`${inter.className} min-w-[350px]`}>
-          <Navbar />
-          {children}
-          <Footer />
-        </body>
-      </ClerkProvider>
+      <body className={`${inter.className} min-w-[350px]`}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
