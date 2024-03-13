@@ -13,9 +13,12 @@ export default async function AdminPage() {
   });
 
   return (
-    <main className="m-auto my-10 max-w-5xl space-y-10 px-3">
+    <main className="m-auto  my-10 max-w-5xl space-y-1 px-3">
       <H1 className="text-center">Admin Dashboard</H1>
-      <section className="flex flex-col gap-3">
+      <p className="space-y-10 text-center text-sm">
+        **Click each job to approve/delete**
+      </p>
+      <section className="mb-10 flex flex-col gap-3">
         <h2 className="text-lg font-bold">Unapproved Jobs:</h2>
         {unapprovedJobs.map((job) => (
           <Link key={job.id} href={`/admin/jobs/${job.slug}`} className="block">
@@ -29,8 +32,8 @@ export default async function AdminPage() {
         )}
       </section>
 
-      <section className="flex flex-col gap-3">
-        <h2 className="text-lg font-bold">Approved Jobs:</h2>
+      <section className=" flex flex-col gap-3 ">
+        <h2 className="mt-10 text-lg font-bold">Approved Jobs:</h2>
         {approvedJobs.map((job) => (
           <Link key={job.id} href={`/admin/jobs/${job.slug}`} className="block">
             <JobListItem job={job} />

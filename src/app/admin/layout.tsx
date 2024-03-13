@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider>
+    <div>
       <AdminNavbar />
       {children}
-    </ClerkProvider>
+    </div>
   );
 }
